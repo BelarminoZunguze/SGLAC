@@ -1,0 +1,15 @@
+.dia, .mes, .ano {
+    display: inline-block;
+    width: 93px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.comprimento {
+    width: 500px;
+}
+
+.linhaSeparadora {
+    margin-top: 22px;
+    width: 500px;
+}

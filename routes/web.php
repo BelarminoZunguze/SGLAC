@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/analise/pagina1/','AnaliseController@index')->name('analise');
+

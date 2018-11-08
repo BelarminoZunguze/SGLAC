@@ -1,0 +1,59 @@
+.caixa{
+    width: 500px;
+    height: 340px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgba(43, 120, 244,0.14);
+    margin-top: 70px;
+    border-radius: 10px;
+}
+.caixaImg {
+    width: 130px;
+    height: 130px;
+    margin-top: -65px;
+}
+
+.iconeUser {
+    font-size: 34px;
+    color: #464646;
+    padding-right: 4px;
+    position: relative;
+    top: 9px;
+}
+
+.iconePass {
+    font-size: 34px;
+    color: #464646;
+    padding-right: 7px;
+    position: relative;
+    top: 9px;
+}
+
+.inputUser {
+    width:265px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.inputPass {
+    width: 265px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.checkDiv {
+    margin-top: 8px;
+}
+
+.checkbox {
+    position: relative;
+    top: 2px;
+}
+
+.entrar {
+    margin-top: 10px;
+}
+
+.cadastrarse {
+    margin-top: 30px;
+}

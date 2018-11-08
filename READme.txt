@@ -1,0 +1,1 @@
+Para alterar a interface, o ficheiro esta em resorce->views->index.blade.php
