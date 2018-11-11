@@ -16,4 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/analise/pagina1/','AnaliseController@index')->name('analise');
+Route::get('/novo/paciente/','AnaliseController@novopaciente')->name('novopaciente');
+Route::resource('paciente', 'PacienteController');
+
 
