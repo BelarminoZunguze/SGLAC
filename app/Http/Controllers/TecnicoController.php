@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Paciente;
+use App\Tecnico;
 use Illuminate\Http\Request;
 
-class PacienteController extends Controller
+class TecnicoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,6 @@ class PacienteController extends Controller
     public function index()
     {
         //
-        $paciente = Paciente::all();
-
-
-        return view('novoExame',['pacientes'=>$paciente]);
     }
 
     /**
@@ -40,21 +36,15 @@ class PacienteController extends Controller
     public function store(Request $request)
     {
         //
-        $paciente = new Paciente();
-
-        $paciente->nome = $request->input('nome');
-        $paciente->save();
-
-        return view('novoExame');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Paciente  $paciente
+     * @param  \App\Tecnico  $tecnico
      * @return \Illuminate\Http\Response
      */
-    public function show(Paciente $paciente)
+    public function show(Tecnico $tecnico)
     {
         //
     }
@@ -62,10 +52,10 @@ class PacienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Paciente  $paciente
+     * @param  \App\Tecnico  $tecnico
      * @return \Illuminate\Http\Response
      */
-    public function edit(Paciente $paciente)
+    public function edit(Tecnico $tecnico)
     {
         //
     }
@@ -74,27 +64,21 @@ class PacienteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Paciente  $paciente
+     * @param  \App\Tecnico  $tecnico
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $paciente)
+    public function update(Request $request, Tecnico $tecnico)
     {
         //
-         $paciente = Paciente::find($paciente);
-
-        $paciente->nome = $request->input('nome');
-        $paciente->save();
-
-        return redirect('novoExame');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Paciente  $paciente
+     * @param  \App\Tecnico  $tecnico
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Paciente $paciente)
+    public function destroy(Tecnico $tecnico)
     {
         //
     }

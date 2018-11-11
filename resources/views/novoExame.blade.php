@@ -13,10 +13,11 @@
                 <br>
 
         
-        <form>
+        <form action="{{ route('paciente.store')}}" method="POST">
+            {!! csrf_field() !!}
             <p>
                 <label>Nome</label>
-            <input id="nome" type="text" placeholder="Exemplo: HIV" class="form-control comprimento" required>
+            <input id="nome" name="nome" type="text" placeholder="Exemplo: HIV" class="form-control comprimento" required>
             </p>
             <br>
             <label>Preço</label>
@@ -51,8 +52,8 @@
         <table border="1" align="center" width="500" > 
 
 <tr> 
-
 <td>Nome </td> 
+
 
 <td>Preco </td>
 
@@ -60,51 +61,16 @@
 
 </tr> 
 
-<tr> 
 
-<td> primeira coluna</td>
-
-<td>segunda coluna </td>
-
-<td>terceira coluna </td>
-
+@foreach($pacientes as $paciente)
+<tr>
+<td> {{ $paciente->nome }}</td>
+<td> {{ $paciente->genero }}</td>
+<td> {{ $paciente->data_nasc }}</td>
+<td> {{ $paciente->altura}}</td>
 </tr>
-<tr> 
 
-<td> primeira coluna</td>
-
-<td>segunda coluna </td>
-
-<td>terceira coluna </td>
-
-</tr>
-<tr> 
-
-<td> primeira coluna</td>
-
-<td>segunda coluna </td>
-
-<td>terceira coluna </td>
-
-</tr>
-<tr> 
-
-<td> primeira coluna</td>
-
-<td>segunda coluna </td>
-
-<td>terceira coluna </td>
-
-</tr>
-<tr> 
-
-<td> primeira coluna</td>
-
-<td>segunda coluna </td>
-
-<td>terceira coluna </td>
-
-</tr> 
+@endforeach
 
 </table>
 

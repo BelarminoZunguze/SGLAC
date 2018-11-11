@@ -17,11 +17,20 @@
               
 
         
+<<<<<<< HEAD
         <form>
             <br>
                 <label>Nome</label>
             <input id="nome" type="text" placeholder="Exemplo: HIV" class="form-control comprimento" required>
             
+=======
+        <form action="{{ route('paciente.store')}}" method="POST">
+            {!! csrf_field() !!}
+            <p>
+                <label>Nome</label>
+            <input id="nome" name="nome" type="text" placeholder="Exemplo: HIV" class="form-control comprimento" required>
+            </p>
+>>>>>>> e2d77f2cfae5f4b70777e9190735ec4de25c591b
             <br>
             <label>Genero</label>
             <select id="genero" required class="form-control comprimento">
