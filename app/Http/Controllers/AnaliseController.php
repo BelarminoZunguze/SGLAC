@@ -9,6 +9,10 @@ class AnaliseController extends Controller
     //
     public function index(){
     	
-    	return view('index');
+    	return view('novoExame');
+    }
+
+    public function novopaciente(){
+    	return view('novoPaciente');
     }
 }

@@ -1,34 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>ProjectoDozndani</title>
-
-    <!-- Bootstrap -->
-    <link href="{{ asset('analises/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('css\estilo.css')}}">
-
-
-
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>@yield('titulo')</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('analises/css/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('analises/css/w3.css')}}">
-    <link href="{{ asset('analises/font-awesome/4.4.0/css/font-awesome.css')}}" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('analises/css/headerEfooter.css')}}">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset ('analises/css/headerEfooter.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('analises/css/modelo.css')}}">
- </head>
 
-
-
-  <body >
-
-   
-      <div class="headerBase">
+    <script src="{{ asset ('analises/js/jquery-3.3.1.js')}}"></script>
+</head>
+<body> 
+    <div class="headerBase">
         <div class="header-distributed container">
             <div class="header-left">
-                <img class="companyLogo" src="{{asset('img/hcm_logo.png')}}">
+                <img class="companyLogo" src="img/hcm_logo.png">
             </div>
             <div class="header-center">
                 <label class="webPageTitle" >Laboratório de Análises Clínicas</label>
@@ -36,7 +23,7 @@
             <div class="header-right">
                 <div class="userLoged">
                     <div class="imgeBlock">
-                        <img class="userImage" src= "{{ asset('img/user_normal.png')}}">
+                        <img class="userImage" src="img/user_normal.png">
                 </div>
                     <button class="userName userButton">rdsambo</button>
                     <span class="separator">|</span>
@@ -45,45 +32,22 @@
             </div>
         </div>
     </div>
-    <div class=" headerOptionsBase" >
+    <div class=" headerOptionsBase">
         <div class="container">
-            <div class="w3-bar w3-center headerOptions " style="width:100%; overflow:hidden;height:44px; ">
+            <div class="w3-bar w3-center headerOptions " style="width:100%; overflow:hidden;height:44px">
                 <a class="w3-bar-item w3-button" href="#" title="">Início</a>
+                @yield('menu')
                 <a class="w3-bar-item w3-button" href="#" title="">Ajuda</a>
+
             </div>
         </div>
     </div>
-   
-    <div class="container">
-        <main>
-            <h1>Modelo</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-        </main>
-    </div>
-    <br>
-            
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-          
+
+<div class="container">
+    <main>
+       @yield('main')
+    </main>
+</div>
 
     <footer class="footer-distributed">
         <div class="footer-left">
@@ -140,12 +104,5 @@
     <div class="copyRigth">© 2018 Copyright:
         <a href="http://www.hcm.gov.mz/"> Hospital Central de Maputo</a>
     </div>
-       
-
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{ asset('analises/js/bootstrap.min.js') }}"></script>
-  </body>
+</body>
 </html>
-  
