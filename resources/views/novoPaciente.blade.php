@@ -49,10 +49,11 @@
                 <br>
 
         
-        <form>
+        <form action="{{ route('paciente.store')}}" method="POST">
+            {!! csrf_field() !!}
             <p>
                 <label>Nome</label>
-            <input id="nome" type="text" placeholder="Exemplo: HIV" class="form-control comprimento" required>
+            <input id="nome" name="nome" type="text" placeholder="Exemplo: HIV" class="form-control comprimento" required>
             </p>
             <br>
             <label>Genero</label>
