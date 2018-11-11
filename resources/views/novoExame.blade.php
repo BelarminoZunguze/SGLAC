@@ -1,5 +1,12 @@
 @extends('templates.modelo')
 
+@section('menu')
+            <a class="w3-bar-item w3-button" href="#" title="">Adicionar Paciente</a>
+            <a class="w3-bar-item w3-button" href="#" title="">Adicionar Requisicao</a>
+            <a class="w3-bar-item w3-button" href="#" title="">Ver paciente</a>
+            <a class="w3-bar-item w3-button" href="#" title="">Adicionar Requisicao</a>
+@stop
+
 @section('main')
 <div class="row">
             <div class="col-md-6">
@@ -32,7 +39,7 @@
             <br>
             <div class="myButtons">
                 <button id="voltar" type="button" class="btn btn-info" >
-                    <a href="{{ route('novopaciente')}}">Voltar</a></button>
+                   Voltar</button>
                 <button id="salvar" type="submit" class="btn btn-success">Salvar</button>
             </div>
         </form>

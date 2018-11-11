@@ -15,7 +15,7 @@
     <div class="headerBase">
         <div class="header-distributed container">
             <div class="header-left">
-                <img class="companyLogo" src="img/hcm_logo.png">
+                <img class="companyLogo" src="{{  asset('img/hcm_logo.png')}}">
             </div>
             <div class="header-center">
                 <label class="webPageTitle" >Laboratório de Análises Clínicas</label>
@@ -23,7 +23,7 @@
             <div class="header-right">
                 <div class="userLoged">
                     <div class="imgeBlock">
-                        <img class="userImage" src="img/user_normal.png">
+                        <img class="userImage" src="{{ asset('img/user_normal.png')}}">
                 </div>
                     <button class="userName userButton">rdsambo</button>
                     <span class="separator">|</span>
@@ -48,6 +48,8 @@
        @yield('main')
     </main>
 </div>
+<br>
+<br>
 
     <footer class="footer-distributed">
         <div class="footer-left">
