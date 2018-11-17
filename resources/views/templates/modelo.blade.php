@@ -25,7 +25,7 @@
                     <div class="imgeBlock">
                         <img class="userImage" src="{{ asset('img/user_normal.png')}}">
                 </div>
-                    <button class="userName userButton">rdsambo</button>
+                    <button class="userName userButton">user</button>
                     <span class="separator">|</span>
                     <a href='login.php' style='text-decoration: none'><button class="logOut userButton" type="button">Sair</button></a>
                 </div>
