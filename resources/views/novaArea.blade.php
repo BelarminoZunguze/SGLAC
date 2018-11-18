@@ -1,4 +1,4 @@
-@extends('templates.modelo')
+@extends('templates.master')
 @section('menu')
             <a class="w3-bar-item w3-button" href="#" title="">Adicionar Usuario</a>
             <a class="w3-bar-item w3-button" href="#" title="">Adicionar Area</a>

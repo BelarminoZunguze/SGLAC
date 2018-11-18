@@ -1,5 +1,5 @@
 
-@extends('templates.modelo')
+@extends('templates.master')
 @section('menu')
             <a class="w3-bar-item w3-button" href="#" title="">Adicionar Paciente</a>
             <a class="w3-bar-item w3-button" href="#" title="">Adicionar Requisicao</a>
@@ -17,23 +17,15 @@
               
 
         
-<<<<<<< HEAD
+
         <form>
             <br>
                 <label>Nome</label>
-            <input id="nome" type="text" placeholder="Exemplo: HIV" class="form-control comprimento" required>
-            
-=======
-        <form action="{{ route('paciente.store')}}" method="POST">
-            {!! csrf_field() !!}
-            <p>
-                <label>Nome</label>
-            <input id="nome" name="nome" type="text" placeholder="Exemplo: HIV" class="form-control comprimento" required>
-            </p>
->>>>>>> e2d77f2cfae5f4b70777e9190735ec4de25c591b
+            <input id="nome" type="text" placeholder="nome" class="form-control comprimento" required>
+
             <br>
             <label>Genero</label>
-            <select id="genero" required class="form-control comprimento">
+            <select id="genero" required class="form-control comprimento" name="genero">
                 <option value="0">Masculino</option>
                 <option value="1">Feminino</option>
                 <option value="2">Indeterminado</option>
@@ -41,7 +33,7 @@
             
             <br>
             <label>Data de nascimento</label>
-            <input type="date" name="datadenascimento" class="form-control">
+            <input type="date" name="datadenascimento" class="form-control" id="datadenascimento">
             <br>
             <label>Altura</label>
             <input type="text" name="altura" id="altura" class="form-control">
