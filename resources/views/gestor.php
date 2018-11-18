@@ -1,55 +1,73 @@
+﻿
+
 <!DOCTYPE html>
 <html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
-    <title>@yield('titulo')</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('analises/css/bootstrap.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('analises/css/w3.css')}}">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/w3.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset ('analises/css/headerEfooter.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('analises/css/modelo.css')}}">
+    <link rel="stylesheet" type="text/css" href="css/headerEfooter.css">
+    <link rel="stylesheet" type="text/css" href="css/inicio.css">
 
-    <script src="{{ asset ('analises/js/jquery-3.3.1.js')}}"></script>
+    <script src="js/jquery-3.3.1.js"></script>
 </head>
-<body> 
+<body>
     <div class="headerBase">
         <div class="header-distributed container">
             <div class="header-left">
-                <img class="companyLogo" src="{{  asset('img/hcm_logo.png')}}">
+                <img class="companyLogo" src="img/hcm_logo.png">
             </div>
             <div class="header-center">
                 <label class="webPageTitle" >Laboratório de Análises Clínicas</label>
             </div>
             <div class="header-right">
-                <div class="userLoged">
-                    <div class="imgeBlock">
-                        <img class="userImage" src="{{ asset('img/user_normal.png')}}">
-                </div>
-                    <button class="userName userButton">user</button>
-                    <span class="separator">|</span>
-                    <a href='login.php' style='text-decoration: none'><button class="logOut userButton" type="button">Sair</button></a>
-                </div>
+                <?php
+//                    session_start();
+                    $sessao = $_SESSION['sess_user'];
+
+                    echo "<div class=\"userLoged\">
+                    <div class=\"imgeBlock\">
+                        <img class=\"userImage\" src=\"img/user_normal.png\">
+                    </div>
+                        <button class=\"userName userButton\">$sessao</button>
+                        <span class=\"separator\">|</span>
+                        <a href='login.php' style='text-decoration: none'><button class=\"logOut userButton\" type=\"button\">Sair</button></a>
+                    </div>";
+                ?>
             </div>
         </div>
     </div>
     <div class=" headerOptionsBase">
         <div class="container">
             <div class="w3-bar w3-center headerOptions " style="width:100%; overflow:hidden;height:44px">
-                <a class="w3-bar-item w3-button" href="#" title="">Início</a>
-                @yield('menu')
+                <a class="w3-bar-item w3-button" href="gestor.php" title="">Início</a>
+                <a class="w3-bar-item w3-button" href="novoExame.html" title="">Cadastrar Exames</a>
+                <a class="w3-bar-item w3-button" href="#" title="">Cadastrar utilizador</a> 
+                <a class="w3-bar-item w3-button" href="#" title="">Cadastrar area de exame</a>
+                <a class="w3-bar-item w3-button" href="#" title="">Estatisticas</a>
                 <a class="w3-bar-item w3-button" href="#" title="">Ajuda</a>
-
             </div>
         </div>
     </div>
-
-<div class="container">
-    <main>
-       @yield('main')
-    </main>
-</div>
-<br>
-<br>
+    <div class="container">
+        <main>
+            <h1>Gestor</h1>
+            <br>
+            <img class="homeImage" src="img/fundo.png">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </main>
+    </div>
 
     <footer class="footer-distributed">
         <div class="footer-left">

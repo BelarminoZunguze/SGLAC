@@ -1,0 +1,326 @@
+main {
+    margin-left: 15px;
+    font-family: Candara;
+    margin-right: 20px;
+    margin-left: 30px;
+}
+
+h1 {
+    font-family: Candara;
+    margin-top: 20px;
+}
+
+
+/* Margem do corpo*/
+body  {
+    margin:0;
+}
+
+/* Cabecario Header */
+.headerBase {
+    background-color: aliceblue;
+}
+
+/* Rodape */
+.header-distributed{
+    background-color: aliceblue;
+    width: 100%;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 0px;
+}
+
+/* Tanto Esquerda como Direita*/
+.header-distributed .header-left,
+.header-distributed .header-center,
+.header-distributed .header-right{
+    display: inline-block;
+    vertical-align: top;
+}
+/* Tanto Esquerda como Direita*/
+
+/* Esquerda */
+.header-distributed .header-left {
+    width: 23%;
+    text-align: left;
+}
+
+.header-distributed .header-left .companyLogo {
+    width: 90.1px;
+}
+/* Esquerda*/
+
+/* Centro*/
+.header-distributed .header-center {
+    width: 52%;
+    text-align: center;
+}
+
+.webPageTitle {
+    font-family: Candara;
+    font-size: 34px;
+    font-weight: bold;
+    position: relative;
+    top: 4px;
+}
+/* Centro*/
+
+/* Direita*/
+.header-distributed .header-right {
+    width: 23%;
+    text-align: right;
+}
+
+.header-distributed .header-right .userLoged {
+    display: inline;
+    margin: 0;
+}
+
+.header-distributed .header-right .userLoged .imgeBlock {
+    text-align: right;
+}
+
+.header-distributed .header-right .userLoged .imgeBlock .userImage {
+    width: 40px;
+    border-radius: 200px;
+    position: relative;
+    right: 53px;
+    top: 3px;
+}
+
+.header-distributed .header-right .userLoged .separator {
+    font-size: 13px;
+}
+
+.header-distributed .header-right .userLoged .userButton {
+    font-family: "Times New Roman";
+    font-size: small;
+    background-color: aliceblue;
+    border: 0;
+    outline: 0;
+}
+
+.header-distributed .header-right .userLoged  .userButton:hover {
+    text-decoration: underline;
+}
+/* Direita*/
+/* Bara de Opcoes de Cabecario*/
+.headerOptionsBase {
+    background-color: #2b78f4;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.headerOptions {
+    background-color: #2b78f4;
+    color: aliceblue;
+    font-family: Candara;
+    font-size: 18px;
+    font-weight: bold;
+}
+/* Bara de Opcoes de Cabecario*/
+/* Cabecalho*/
+/* Cabecario Header */
+
+
+
+
+
+
+/* Rodape */
+.footer-distributed{
+    background-color: #061D25;
+    width: 100%;
+    text-align: left;
+    font: bold 16px Candara;
+
+    padding-bottom: 10px;
+}
+
+/* Tanto Esquerda como Direita*/
+.footer-distributed .footer-left,
+.footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: top;
+}
+/* Tanto Esquerda como Direita*/
+
+/* Esquerda */
+.footer-distributed .footer-left {
+    width: 50%;
+    padding-top: 15px;
+}
+/* Esquerda */
+
+/* Lista de Redes Sociais */
+.footer-distributed .footer-left  .listaDeRedes {
+    padding: 0;
+    text-align: right;
+
+    padding-top: 51px;
+    padding-right: 5%;
+
+}
+
+.footer-distributed .footer-left  .listaDeRedes .itemDeRede {
+    display: inline-block;
+}
+
+.footer-distributed .footer-left  .listaDeRedes .itemDeRede .rede {
+    color: #70726F;
+    font-size: 30px;
+    border-left: 1px solid #2b78f4;
+    text-decoration: none;
+    padding-right: 6px;
+    padding-left: 10px;
+}
+
+.footer-distributed .footer-left  .listaDeRedes .itemDeRede:last-child .rede{
+    border-right: 1px solid #2b78f4;
+    padding-right: 10px;
+}
+
+.rede:hover {
+    color: white;
+}
+/* Lista de Redes Sociais*/
+
+/* Direita*/
+.footer-distributed .footer-right {
+    width: 40%;
+    padding-top: 10px;
+}
+
+.footer-distributed .footer-right i {
+    background-color: #2b78f4;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 5px 15px;
+    vertical-align: middle;
+}
+
+.footer-distributed .footer-right i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer-distributed .footer-right p{
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin:0;
+}
+
+.footer-distributed .footer-right p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+}
+
+.footer-distributed .footer-right p a{
+    color:  #5383d3;
+    text-decoration: none;
+}
+/* Direita*/
+/* Rodape*/
+
+/* Copy Right*/
+.copyRigth {
+    background: #292c2f;
+    color: #bfbfbf;
+    padding-top: 0;
+    margin-top: 0;
+    text-align: center;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    font-size: 12px;
+}
+/* Copy Right*/
+
+/* Responsividade*/
+@media (max-width: 880px) {
+    /* Cabecalho*/
+    /* Tanto Esquerda como Direita */
+    .header-distributed .header-left,
+    .header-distributed .header-center,
+    .header-distributed .header-right{
+        display: block;
+        width: 100%;
+    }
+    /* Tanto Esquerda como Direita*/
+
+
+    /* Esquerda*/
+    .header-distributed .header-left {
+        padding-top: 2px;
+        text-align: center;
+    }
+
+    .header-distributed .header-left .companyLogo {
+        width: 80px;
+    }
+    /*Esquerda*/
+
+    /* Centro*/
+    .header-distributed .header-center {
+        padding-bottom: 5px;
+        text-align: center;
+    }
+
+
+    .webPageTitle {
+        font-size: 24px;
+    }
+    /* Centro*/
+
+    /* Direita*/
+    .header-distributed .header-right .userLoged .imgeBlock {
+        display: inline-block;
+        text-align: center;
+        padding-bottom: 2px;
+    }
+
+    .header-distributed .header-right .userLoged .imgeBlock .userImage {
+        right: 0px;
+    }
+    /* Direita*/
+    /* Cabecalho*/
+
+    /* Rodape*/
+    .footer-distributed {
+        font: bold 14px Candara;
+    }
+
+    /* Tanto Esquerda como Direita */
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-right{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    /* Tanto Esquerda como Direita */
+
+    /* Esquerda*/
+    .footer-distributed .footer-left .listaDeRedes {
+        padding: 0;
+        text-align: center;
+    }
+    .footer-distributed .footer-left .listaDeRedes .itemDeRede .rede {
+        font-size: 25px;
+    }
+    /* Esquerda*/
+
+    /* Direita*/
+    .footer-distributed .footer-right{
+        padding-top: 0px;
+    }
+    /* Direita*/
+    /* Rodape*/
+}
+/* Responsividade*/
