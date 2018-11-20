@@ -9,5 +9,5 @@ class ExameRequisitado_model extends Model
     //
     protected $table='examerequisitados';
     protected $primarykKey='id';
-    protected $fillable = ['codigoRequisicao', 'codigoFuncionario', 'situacao', 'codigoAmostra', 'tipoAmostra', 'validado', 'dataResultado', 'dataSaidaResultado', 'resultaado' ];
+    protected $fillable = [ 'codigoFuncionario', 'situacao', 'codigoAmostra', 'tipoAmostra', 'validado', 'dataResultado', 'dataSaidaResultado', 'resultado','codigoPaciente','exame','preco','pagamento' ];
 }

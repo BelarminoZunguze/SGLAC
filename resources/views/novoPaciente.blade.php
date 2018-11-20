@@ -18,7 +18,7 @@
 <form action="{{route('paciente.store')}}" method="post">
        {!! csrf_field() !!}
             <br>
-                <strong>Name</strong>
+                <strong>Nome</strong>
             <input id="nome" name="nome" type="text" placeholder="nome" class="form-control comprimento" required>
              <span class="text-danger">{{$errors->first('nome')}}</span>
 
@@ -34,7 +34,7 @@
             
             <br>
             <strong>Data de nascimento</strong>
-            <input type="date" name="datadenascimento" class="form-control" id="datadenascimento">
+            <input type="date" name="data_nasc" class="form-control" id="data_nasc">
             <span class="text-danger">{{$errors->first('data_nasc')}}</span>
             <br>
             
@@ -52,7 +52,7 @@
       <br>
        
              <strong>Peso</strong>
-            <input id="peso" type="number" placeholder="peso" class="form-control comprimento" id="peso">
+            <input id="peso" type="number" placeholder="peso" class="form-control comprimento" name="peso">
             <span class="text-danger">{{$errors->first('peso')}}</span>
             <br>
             <strong>Contacto</strong>
@@ -64,7 +64,7 @@
             <span class="text-danger">{{$errors->first('bi')}}</span>
             <br>
             <strong>Grupo sanguineo</strong>
-            <select id="gruposanguineo" required class="form-control" placeholder="gruposanguineo" type="text">
+            <select id="grupo_sanguneo" required class="form-control" placeholder="gruposanguineo" type="text" name="grupo_sanguneo">
                 <option value="0">AB</option>
                 <option value="1">O</option>
                 <option value="2">OB</option>
