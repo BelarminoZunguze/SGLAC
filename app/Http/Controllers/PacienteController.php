@@ -15,10 +15,8 @@ class PacienteController extends Controller
     public function index()
     {
         //
-        $paciente = Paciente::all();
-
-
-        return view('novoExame',['pacientes'=>$paciente]);
+        $paciente=Paciente::all();
+        return view('novoPaciente',compact('paciente'));
     }
 
     /**
@@ -29,6 +27,7 @@ class PacienteController extends Controller
     public function create()
     {
         //
+        return view('novoPaciente');
     }
 
     /**
@@ -39,63 +38,87 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $paciente = new Paciente();
+        
+        $request->validate([
+           'nome'=>'required',
+           'genero'=>'required',
+           'data_nasc'=>'required',
+           'altura'=>'required',
+           'peso'=>'required',
+           'contacto'=>'required',
+           'bi'=>'required',
+           'grupo_sanguineo'=>'required'
 
-        $paciente->nome = $request->input('nome');
-        $paciente->save();
+        ]);
 
-        return view('novoExame');
+        Paciente::create($request->all());
+
+        return redirect()->route('paciente.index')->with('success','Paciente registado com sucesso');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Paciente  $paciente
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Paciente $paciente)
+    public function show($id)
     {
         //
+        $paciente=Paciente::findOrFail($id);
+        return view('novoPaciente',compact('paciente'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Paciente  $paciente
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Paciente $paciente)
+    public function edit($id)
     {
         //
+        $paciente=Paciente::findOrFail($id);
+        return view('novoPaciente',compact('paciente'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Paciente  $paciente
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $paciente)
+    public function update(Request $request, $id)
     {
         //
-         $paciente = Paciente::find($paciente);
-
-        $paciente->nome = $request->input('nome');
-        $paciente->save();
-
-        return redirect('novoExame');
+        {
+        $request->validate([
+           'nome'=>'required',
+           'genero'=>'required',
+           'data_nasc'=>'required',
+           'altura'=>'required',
+           'peso'=>'required',
+           'contacto'=>'required',
+           'bi'=>'required',
+           'grupo_sanguineo'=>'required'
+        ]);
+        Paciente::findOrFail($id)->update($request->all());
+        return redirect()->route('novoPaciente')->with('success','Paciente editado com sucesso');
+    }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Paciente  $paciente
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Paciente $paciente)
+    public function destroy($id)
     {
         //
+
+        Paciente::findOrFail($id)->delete();
+        return redirect()->route('novoPaciente')->with('success','Paciente Removido');
     }
 }

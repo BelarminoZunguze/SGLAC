@@ -79,8 +79,8 @@ class ExameRequisitadoController extends Controller
     public function edit($id)
     {
         //
-        $product=ExameRequisitado_model::findOrFail($id);
-        return view('templates.edit',compact('exameRequisitados'));
+        $exameRequisitado=ExameRequisitado_model::findOrFail($id);
+        return view('templates.edit',compact('exameRequisitado'));
     }
 
     /**
@@ -107,7 +107,7 @@ class ExameRequisitadoController extends Controller
            'resultado'=>'required'
         ]);
         ExameRequisitado_model::findOrFail($id)->update($request->all());
-        return redirect()->route('templates.index')->with('success','Exame editado com sucesso');
+        return redirect()->route('exameRequisitados.index')->with('success','Exame editado com sucesso');
     }
     }
 
@@ -122,6 +122,6 @@ class ExameRequisitadoController extends Controller
         //
 
         ExameRequisitado_model::findOrFail($id)->delete();
-        return redirect()->route('templates.index')->with('success','Exame apagado com sucesso');
+        return redirect()->route('exameRequisitados.index')->with('success','Exame apagado com sucesso');
     }
 }

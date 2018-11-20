@@ -15,43 +15,32 @@
         <div class="row">
             <div class="col-md-4">
               
-
-        
-<<<<<<< HEAD
-
-        <form>
+<form action="{{route('paciente.store')}}" method="post">
+       {!! csrf_field() !!}
             <br>
-                <label>Nome</label>
-            <input id="nome" type="text" placeholder="nome" class="form-control comprimento" required>
+                <strong>Name</strong>
+            <input id="nome" name="nome" type="text" placeholder="nome" class="form-control comprimento" required>
+             <span class="text-danger">{{$errors->first('nome')}}</span>
 
-=======
-        <form>
+
             <br>
-                <label>Nome</label>
-            <input id="nome" type="text" placeholder="Exemplo: HIV" class="form-control comprimento" required>
-            
-        <form action="{{ route('paciente.store')}}" method="POST">
-            {!! csrf_field() !!}
-            <p>
-                <label>Nome</label>
-            <input id="nome" name="nome" type="text" placeholder="Exemplo: HIV" class="form-control comprimento" required>
-            </p>
-			
->>>>>>> ec3d9bfff42b6f202f4742cc291e9a4b52d23832
-            <br>
-            <label>Genero</label>
+             <strong>Genero</strong>
             <select id="genero" required class="form-control comprimento" name="genero">
                 <option value="0">Masculino</option>
                 <option value="1">Feminino</option>
                 <option value="2">Indeterminado</option>
             </select>
+             <span class="text-danger">{{$errors->first('genero')}}</span>
             
             <br>
-            <label>Data de nascimento</label>
+            <strong>Data de nascimento</strong>
             <input type="date" name="datadenascimento" class="form-control" id="datadenascimento">
+            <span class="text-danger">{{$errors->first('data_nasc')}}</span>
             <br>
-            <label>Altura</label>
-            <input type="text" name="altura" id="altura" class="form-control">
+            
+            <strong>Altura</strong>
+            <input type="number" name="altura" id="altura" class="form-control">
+            <span class="text-danger">{{$errors->first('altura')}}</span>
             <br>
             <div class="myButtons">
                 <button id="voltar" type="reset" class="btn btn-info" >Limpar</button>
@@ -62,96 +51,94 @@
     <div class="col-md-4">
       <br>
        
-             <label>Peso</label>
+             <strong>Peso</strong>
             <input id="peso" type="number" placeholder="peso" class="form-control comprimento" id="peso">
-            
+            <span class="text-danger">{{$errors->first('peso')}}</span>
             <br>
-            <label>Grupo sanguineo</label>
+            <strong>Contacto</strong>
+            <input type="text" name="contacto" id="contacto" class="form-control">
+            <span class="text-danger">{{$errors->first('contacto')}}</span>
+            <br>
+            <strong>BI</strong>
+            <input type="text" name="bi" class="form-control" id="bi">
+            <span class="text-danger">{{$errors->first('bi')}}</span>
+            <br>
+            <strong>Grupo sanguineo</strong>
             <select id="gruposanguineo" required class="form-control" placeholder="gruposanguineo" type="text">
                 <option value="0">AB</option>
                 <option value="1">O</option>
                 <option value="2">OB</option>
             </select>
+            <span class="text-danger">{{$errors->first('grupo_sanguneo')}}</span>
+            <br>
             
-            <br>
-            <label>BI</label>
-            <input type="text" name="bi" class="form-control" id="bi">
-            <br>
-            <label>Contacto</label>
-            <input type="text" name="contacto" id="contacto" class="form-control">
+
             <br>
 
     </div>
 </form>
-    <div class="col-md-4">
+
+ <div class="col-md-4">
         
             <br>
             <br>
-        <table border="1" align="center" width="450" > 
+ @if($message=Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{$message}}</p>
+        </div>
+    @endif
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+               
+                
+                <th>Nome</th>
+                <th>Genero</th>
+                <th>Nascimento</th>
+                <th>Altura</th>
+                <th>Peso</th>
+                <th>Contacto</th>
+                <th>BI</th>
+                <th>Gr.Sanguineo</th>
+               
+                <th width="280px">Accao</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($paciente as $paciente)
 
-<tr> 
-
-<td>primeira coluna </td> 
-
-<td>segunda coluna </td>
-
-<td>terceira coluna </td>
-
-</tr> 
-
-<tr> 
-
-<td> primeira coluna</td>
-
-<td>segunda coluna </td>
-
-<td>terceira coluna </td>
-
-</tr>
-<tr> 
-
-<td> primeira coluna</td>
-
-<td>segunda coluna </td>
-
-<td>terceira coluna </td>
-
-</tr>
-<tr> 
-
-<td> primeira coluna</td>
-
-<td>segunda coluna </td>
-
-<td>terceira coluna </td>
-
-</tr>
-<tr> 
-
-<td> primeira coluna</td>
-
-<td>segunda coluna </td>
-
-<td>terceira coluna </td>
-
-</tr>
-<tr> 
-
-<td> primeira coluna</td>
-
-<td>segunda coluna </td>
-
-<td>terceira coluna </td>
-
-</tr> 
-
-</table>
+                <tr>
+                 
+                    <td>{{$paciente->nome}}</td>
+                    <td>{{$paciente->genero}}</td>
+                     <td>{{$paciente->data_nasc}}</td>
+                    <td>{{$paciente->altura}}</td>
+                     <td>{{$paciente->peso}}</td>
+                    <td>{{$paciente->contacto}}</td>
+                     <td>{{$paciente->bi}}</td>
+                    <td>{{$paciente->grupo_sanguineo}}</td>
+                    <td>
+                        <form action="{{route('paciente.destroy',$paciente->id)}}" method="post" role="form">
+                            
+                            <a href="{{route('paciente.edit',$paciente->id)}}" class="btn btn-primary">Editar</a>
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger">Apagar</button>
+                        </form>
 
 
-    
-</div>
-</div>
-</div>
+                    </td>
+                </tr>
+            @endforeach
+
+            </tbody>
+        </table>
+
+
+
+ </div>           
+   
      
   @stop
 

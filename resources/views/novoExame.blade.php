@@ -1,10 +1,10 @@
 @extends('templates.master')
 
 @section('menu')
-            <a class="w3-bar-item w3-button" href="#" title="">Adicionar Paciente</a>
-            <a class="w3-bar-item w3-button" href="#" title="">Adicionar Requisicao</a>
-            <a class="w3-bar-item w3-button" href="#" title="">Ver paciente</a>
-            <a class="w3-bar-item w3-button" href="#" title="">Adicionar Requisicao</a>
+            <a class="w3-bar-item w3-button" href="#" title="">Adicionar Usuario</a>
+            <a class="w3-bar-item w3-button" href="#" title="">Adicionar Area</a>
+            <a class="w3-bar-item w3-button" href="#" title="">Adicionar exame</a>
+            <a class="w3-bar-item w3-button" href="#" title="">Ver estatisticas</a>
 @stop
 
 @section('main')

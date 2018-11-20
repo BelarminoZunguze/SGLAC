@@ -38,7 +38,6 @@
 
                 <tr>
                     <td>{{$exameRequisitado->id}}</td>
-                    
                     <td>{{$exameRequisitado->situacao}}</td>
                     <td>{{$exameRequisitado->codigoAmostra}}</td>
                      <td>{{$exameRequisitado->tipoAmostra}}</td>
@@ -49,7 +48,7 @@
                     <td>{{$exameRequisitado->resultado}}</td>
                     <td>
                         <form action="{{route('exameRequisitados.destroy',$exameRequisitado->id)}}" method="post" role="form">
-                            <a href="{{route('exameRequisitados.show',$exameRequisitado->id)}}" class="btn btn-info">Detalhes</a>
+                            
                             <a href="{{route('exameRequisitados.edit',$exameRequisitado->id)}}" class="btn btn-primary">Editar</a>
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <input type="hidden" name="_method" value="DELETE">
@@ -65,3 +64,4 @@
         </table>
     </div>
 @stop
+
