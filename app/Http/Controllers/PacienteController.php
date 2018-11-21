@@ -40,14 +40,8 @@ class PacienteController extends Controller
     {
         
         $request->validate([
-           'nome'=>'required',
-           'genero'=>'required',
-           'data_nasc'=>'required',
-           'altura'=>'required',
-           'peso'=>'required',
-           'contacto'=>'required',
-           'bi'=>'required',
-           'grupo_sanguineo'=>'required'
+           'nome'=>'required'
+       
 
         ]);
 
@@ -119,6 +113,6 @@ class PacienteController extends Controller
         //
 
         Paciente::findOrFail($id)->delete();
-        return redirect()->route('novoPaciente')->with('success','Paciente Removido');
+        return redirect()->route('paciente.index')->with('success','Paciente Removido');
     }
 }

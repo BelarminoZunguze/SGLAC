@@ -27,7 +27,7 @@ class ExameRequisitadoController extends Controller
     public function create()
     {
         //
-        return view('templates.create');
+        return view('templates.requisicao');
     }
 
     /**
@@ -38,23 +38,9 @@ class ExameRequisitadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $request->validate([
-           'codigoRequisicao'=>'required',
-           'codigoFuncionario'=>'required',
-           'situacao'=>'required',
-           'codigoAmostra'=>'required',
-           'tipoAmostra'=>'required',
-           'dataColecta'=>'required',
-           'validado'=>'required',
-           'dataResultado'=>'required',
-           'dataSaidaResultado'=>'required',
-           'resultado'=>'required'
-
-
-        ]);
+     
         ExameRequisitado_model::create($request->all());
-        return redirect()->route('templates.index')->with('success','Exame criao com sucesso');
+        return redirect()->route('exameRequisitados.index')->with('success','Exame criao com sucesso');
     }
 
     /**
@@ -66,7 +52,7 @@ class ExameRequisitadoController extends Controller
     public function show($id)
     {
         //
-        $product=Product_model::findOrFail($id);
+        $exameRequisitados=ExameRequisitado_model::findOrFail($id);
         return view('templates.show',compact('exameRequisitados'));
     }
 
@@ -93,23 +79,12 @@ class ExameRequisitadoController extends Controller
     public function update(Request $request, $id)
     {
         //
-        {
-        $request->validate([
-           'codigoRequisicao'=>'required',
-           'codigoFuncionario'=>'required',
-           'situacao'=>'required',
-           'codigoAmostra'=>'required',
-           'tipoAmostra'=>'required',
-           'dataColecta'=>'required',
-           'validado'=>'required',
-           'dataResultado'=>'required',
-           'dataSaidaResultado'=>'required',
-           'resultado'=>'required'
-        ]);
+       
+     
         ExameRequisitado_model::findOrFail($id)->update($request->all());
         return redirect()->route('exameRequisitados.index')->with('success','Exame editado com sucesso');
     }
-    }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -123,5 +98,11 @@ class ExameRequisitadoController extends Controller
 
         ExameRequisitado_model::findOrFail($id)->delete();
         return redirect()->route('exameRequisitados.index')->with('success','Exame apagado com sucesso');
+    }
+
+    public function search(Request $request){
+        $exameRequisitados = ExameRequisitado_model::find($request->input('search'));
+        return view('templates.index', compact('exameRequisitados'));
+
     }
 }

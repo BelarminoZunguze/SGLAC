@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <title>@yield('titulo')</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('analises/css/bootstrap.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('analises/css/w3.css')}}">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="{{ asset ('analises/css/headerEfooter.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('analises/css/modelo.css')}}">
-
     <script src="{{ asset ('analises/js/jquery-3.3.1.js')}}"></script>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+    
+  
 </head>
 <body> 
     <div class="headerBase">
@@ -25,9 +32,11 @@
                     <div class="imgeBlock">
                         <img class="userImage" src="{{ asset('img/user_normal.png')}}">
                 </div>
-                    <button class="userName userButton">user</button>
+                 @if(isset(Auth::user()->email))
+                    <strong style="font-size: 10px;">{{ Auth::user()->email }}</strong>
                     <span class="separator">|</span>
-                    <a href='login.php' style='text-decoration: none'><button class="logOut userButton" type="button">Sair</button></a>
+                    <a href="{{ url('/main/logout') }}" style="font-size: 10px;color: red;">Sair</a>
+                 @endif   
                 </div>
             </div>
         </div>
@@ -50,7 +59,8 @@
 </div>
 <br>
 <br>
-
+<br>
+<br>
     <footer class="footer-distributed">
         <div class="footer-left">
             <!--<div class="footIn">-->

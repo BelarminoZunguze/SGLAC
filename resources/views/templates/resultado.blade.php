@@ -1,32 +1,27 @@
+
 @extends('templates.master')
 @section('menu')
-            <a class="w3-bar-item w3-button" href="{{route('paciente.index')}}" title="Novo Paciente">Adicionar Paciente</a>
+            <a class="w3-bar-item w3-button" href="#" title="">Adicionar Paciente</a>
+            <a class="w3-bar-item w3-button" href="#" title="">Adicionar Requisicao</a>
             <a class="w3-bar-item w3-button" href="#" title="">Ver paciente</a>
-            <a class="w3-bar-item w3-button" href="{{route('exameRequisitados.create')}}" title="">Adicionar Requisicao</a>
-            <a class="w3-bar-item w3-button" href="exameRequisitados.index" title="">Ver requisicoes</a>
-            
+            <a class="w3-bar-item w3-button" href="#" title="">Adicionar Requisicao</a>
 
  @stop
 
 @section('main')
-    <div class="row">
-        <div class="col-lg-12 margin-tb" style="margin-top: 20px;">
-            <div class="pull-left">
-               
-            </div>
-            <div class="pull-right">
-                
-            </div>
-        </div>
-    </div>
-   
-    @if($message=Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{$message}}</p>
-        </div>
-    @endif
-    <div class="table-responsive">
-        <table class="table table-hover">
+
+<div class="box">
+	<form >
+		<strong>Insira o id da requisicao</strong>
+		<input type="number" name="id" id="id" placeholder="Insira o id da requisicaoi" class="form control">
+		
+	<button type="submit">Submeter</button>	
+	</form>
+
+	
+</div>
+<div class="container-responsive">
+	<table class="table table-hover">
             <thead>
             <tr>
                 <th>ID</th>
@@ -39,8 +34,6 @@
                 <th>DataResult</th>
                 <th>DataSaiRe</th>
                 <th>Resultado</th>
-                <th>Paciente</th>
-                <th>Exame</th>
                
                 <th width="280px">Accao</th>
             </tr>
@@ -58,8 +51,6 @@
                     <td>{{$exameRequisitado->dataResultado}}</td>
                      <td>{{$exameRequisitado->dataSaidaResultado}}</td>
                     <td>{{$exameRequisitado->resultado}}</td>
-                    <td>{{$exameRequisitado->codigoPaciente}}</td>
-                    <td>{{$exameRequisitado->exame}}</td>
                     <td>
                         <form action="{{route('exameRequisitados.destroy',$exameRequisitado->id)}}" method="post" role="form">
                             
@@ -76,6 +67,6 @@
 
             </tbody>
         </table>
-    </div>
+	
+</div>
 @stop
-

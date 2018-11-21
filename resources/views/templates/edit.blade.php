@@ -1,5 +1,7 @@
 @extends('templates.master')
 @section('main')
+
+<div class="box" style="width: 600px;">
     <div class="row">
         <div class="col-lg-12 margin-tb" style="margin-top: 20px;">
             <div class="pull-left">
@@ -15,13 +17,7 @@
         <input type="hidden" name="_token" value="{{csrf_token()}}">
         <input type="hidden" name="_method" value="PUT">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group{{$errors->has('codigoRequisicao')?' has-error':''}}">
-                    <strong>Codigo da Requisicao</strong>
-                    <input type="text" name="codigoRequisicao" value="{{ $exameRequisitado->codigoRequisicao }}" class="form-control" placeholder="codigoRequisicao">
-                    <span class="text-danger">{{$errors->first('codigoRequisicao')}}</span>
-                </div>
-            </div>
+            
               <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group{{$errors->has('codigoFuncionario')?' has-error':''}}">
                     <strong>Codigo do Funcionario</strong>
@@ -94,7 +90,9 @@
                 <button type="submit" class="btn btn-primary">Editar</button>
             </div>
         </div>
+
     </form>
+</div>
 @stop
 
 
