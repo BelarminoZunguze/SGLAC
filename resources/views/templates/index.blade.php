@@ -12,19 +12,12 @@
     <div class="row">
         <div class="col-lg-12 margin-tb" style="margin-top: 20px;">
             <div class="pull-left">
-               
+               <h2>Exames Requisitados</h2>
             </div>
             <div class="pull-right">
-<<<<<<< HEAD
+
                 
-=======
-                <form action="{{route('exameRequisitados.search')}}" method="post">
-                    {!! csrf_field()!!}
-                <p><button type="submit">Ok</button>
-                <input type="text" name="search" class="form-control" id="search">
-                </p>
-            </form>
->>>>>>> 0f889baff3d5f24c09ecb0c9adc2783dd76e5349
+
             </div>
         </div>
     </div>
