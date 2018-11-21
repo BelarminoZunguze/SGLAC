@@ -1,10 +1,16 @@
 
 @extends('templates.master')
 @section('menu')
+<<<<<<< HEAD
             <a class="w3-bar-item w3-button" href="{{route('paciente.index')}}" title="Novo Paciente">Adicionar Paciente</a>
             <a class="w3-bar-item w3-button" href="#" title="">Ver paciente</a>
             <a class="w3-bar-item w3-button" href="{{route('exameRequisitados.create')}}" title="">Adicionar Requisicao</a>
             <a class="w3-bar-item w3-button" href="exameRequisitados.index" title="">Ver requisicoes</a>
+=======
+            <a class="w3-bar-item w3-button" href="{{route('exameRequisitados.index')}}" title="">Adicionar Paciente</a>
+            <a class="w3-bar-item w3-button" href="#" title="">Adicionar Requisicao</a>
+            <a class="w3-bar-item w3-button" href="#" title="">Ver Requisicoes</a>
+>>>>>>> 0f889baff3d5f24c09ecb0c9adc2783dd76e5349
             
 
  @stop
